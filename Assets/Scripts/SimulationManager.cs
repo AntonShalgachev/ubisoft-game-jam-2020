@@ -14,8 +14,10 @@ namespace UnityPrototype
         [SerializeField] private bool m_simulateInRuntime = false;
         [SerializeField] private PathFollower m_ghostPlayer = null;
         [SerializeField] private Region m_simulationRegion = null;
+        [SerializeField] private float m_timeScale = 1.0f;
 
-        public float gravitationalConstant => m_gravitationalConstant;
+        public float gravitationalConstant => m_gravitationalConstant * m_timeScale * m_timeScale;
+        public float timeScale => m_timeScale;
 
         private TruePath m_targetPath = null;
 

@@ -16,11 +16,13 @@ namespace UnityPrototype
             public Vector2 acceleration;
         }
 
-        private Vector2 m_initialVelocity => m_initialDirection * m_initialSpeed;
+        private Vector2 m_initialVelocity => m_initialDirection * m_initialSpeed * m_simulationManager.timeScale;
 
         private Rigidbody2D m_body => GetComponent<Rigidbody2D>();
         private SimulatedState m_simulationState = null;
         private bool m_isSimulationActive => m_simulationState != null;
+
+        private SimulationManager m_simulationManager => GameComponentsLocator.Get<SimulationManager>();
 
         public float mass => m_body.mass;
         public Vector2 position => m_isSimulationActive ? m_simulationState.position : currentPosition;
@@ -67,13 +69,8 @@ namespace UnityPrototype
             }
             else
             {
-                AddRuntimeForce(force);
+                m_body.AddForce(force);
             }
-        }
-
-        public void AddRuntimeForce(Vector2 force)
-        {
-            m_body.AddForce(force);
         }
     }
 }

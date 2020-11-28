@@ -320,6 +320,7 @@ MonoBehaviour:
   m_simulateInRuntime: 0
   m_ghostPlayer: {fileID: 1932620195}
   m_simulationRegion: {fileID: 1011669018}
+  m_timeScale: 1
 --- !u!1 &1011669016
 GameObject:
   m_ObjectHideFlags: 0

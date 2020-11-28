@@ -10,6 +10,7 @@ namespace UnityPrototype
         [SerializeField] private float m_thrusterMaxForce = 1.0f;
 
         private SimulatedObject m_simulatedObject => GetComponent<SimulatedObject>();
+        private SimulationManager m_simulationManager => GameComponentsLocator.Get<SimulationManager>();
 
         private Vector2 m_lastInput = Vector2.zero;
 
@@ -21,7 +22,8 @@ namespace UnityPrototype
         private void FixedUpdate()
         {
             var force = m_lastInput * m_thrusterMaxForce;
-            m_simulatedObject.AddRuntimeForce(force);
+            force *= m_simulationManager.timeScale * m_simulationManager.timeScale;
+            m_simulatedObject.ApplyForce(force);
         }
     }
 }
