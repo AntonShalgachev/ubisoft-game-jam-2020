@@ -25,7 +25,7 @@ namespace UnityPrototype
 
         private void Start()
         {
-            CreateTruePath(m_player);
+            RecreatePlayerTruePath();
             m_ghostPlayer.SetPath(m_targetPath);
         }
 
@@ -87,15 +87,20 @@ namespace UnityPrototype
         {
             if (m_targetPath != null)
             {
-                Gizmos.color = Color.red;
+                Gizmos.color = Color.white;
                 m_targetPath.DrawGizmos();
             }
+        }
+
+        public void RecreatePlayerTruePath()
+        {
+            CreateTruePath(m_player);
         }
 
         [Button("Simulate")]
         private void SimulatePlayer()
         {
-            CreateTruePath(m_player);
+            RecreatePlayerTruePath();
         }
     }
 }

@@ -280,6 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 819575630}
   - component: {fileID: 819575631}
+  - component: {fileID: 819575632}
   m_Layer: 0
   m_Name: SimulationManager
   m_TagString: Untagged
@@ -321,6 +322,19 @@ MonoBehaviour:
   m_ghostPlayer: {fileID: 1932620195}
   m_simulationRegion: {fileID: 1011669018}
   m_timeScale: 1
+--- !u!114 &819575632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819575629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af3a3ed6e9ff2241a9a4f83b9106f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_recreatePath: 1
 --- !u!1 &1011669016
 GameObject:
   m_ObjectHideFlags: 0
