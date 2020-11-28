@@ -22,7 +22,7 @@ namespace UnityPrototype
 
         private void FixedUpdate()
         {
-            var dt = Time.fixedUnscaledDeltaTime;
+            var dt = Time.fixedDeltaTime;
             UpdateDesynchronization(dt);
         }
 

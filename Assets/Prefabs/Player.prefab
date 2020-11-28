@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_initialDirection: {x: 0, y: 1}
-  m_initialSpeed: 5
+  m_initialSpeed: 1
 --- !u!114 &2170784444697949568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,4 +226,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0227b0f1c65375649a032d945d134964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_thrusterMaxForce: 1
+  m_thrusterMaxForce: 0.2

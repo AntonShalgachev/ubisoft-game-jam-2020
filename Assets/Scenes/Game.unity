@@ -179,6 +179,8 @@ MonoBehaviour:
   m_ghostPlayer: {fileID: 1932620194}
   m_player: {fileID: 131859}
   m_minOffset: 0.47
+  m_maxOffset: 2
+  m_extremeDesyncDuration: 5
 --- !u!4 &365520047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
@@ -313,8 +315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_planets: {fileID: 11400000, guid: 48231dcbda08fe04f98b4b231d38e15b, type: 2}
   m_player: {fileID: 131859}
-  m_maxTime: 10
-  m_gravitationalConstant: 2
+  m_maxTime: 50
+  m_gravitationalConstant: 0.08
   m_simulateInRuntime: 0
   m_ghostPlayer: {fileID: 1932620195}
   m_simulationRegion: {fileID: 1011669018}
@@ -726,11 +728,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014595901916497971, guid: e0656554be83816479cab6a177f0feea,
-        type: 3}
-      propertyPath: m_thrusterMaxForce
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0656554be83816479cab6a177f0feea, type: 3}
