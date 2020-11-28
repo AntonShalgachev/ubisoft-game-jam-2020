@@ -144,8 +144,9 @@ GameObject:
   - component: {fileID: 35029888}
   - component: {fileID: 35029887}
   - component: {fileID: 35029889}
+  - component: {fileID: 35029890}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AmbientMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,6 +270,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35029886}
   m_Enabled: 1
+--- !u!114 &35029890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35029886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4a0c061e5f83f41be62e01ce85ffa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minPitch: 0.5
 --- !u!1 &339267611
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,9 +328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ghostPlayer: {fileID: 1932620194}
   m_player: {fileID: 131859}
+  m_slowdownDuration: 2.5
   m_minOffset: 0.47
   m_maxOffset: 2
-  m_extremeDesyncDuration: 5
+  m_extremeDesyncDuration: 10
   m_desynchronization: 0
 --- !u!4 &365520047 stripped
 Transform:
@@ -479,7 +494,7 @@ MonoBehaviour:
   m_sourcePrefab: {fileID: 458892631361865591, guid: 1ece2eeaa8013f746b48ae79721532d1,
     type: 3}
   m_warningFx: {fileID: 8300000, guid: 735a33a019faf204db67a140a3714401, type: 3}
-  m_warningDesyncThreshold: 0.7
+  m_warningDesyncThreshold: 0.6
 --- !u!4 &519753914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4464270519951573881, guid: e0656554be83816479cab6a177f0feea,

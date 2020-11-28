@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458892631361865480}
   - component: {fileID: 458892631361865591}
+  - component: {fileID: 6576318077231898824}
   m_Layer: 0
   m_Name: FxSource
   m_TagString: Untagged
@@ -127,3 +128,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6576318077231898824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458892631361865481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4a0c061e5f83f41be62e01ce85ffa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minPitch: 0.5
