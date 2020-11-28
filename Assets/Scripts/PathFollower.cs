@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gamelogic.Extensions;
 
 namespace UnityPrototype
 {
@@ -23,7 +24,7 @@ namespace UnityPrototype
                 return;
 
             var position = m_path.GetPosition(m_time);
-            transform.position = position;
+            transform.SetXY(position.x, position.y);
 
             m_time += Time.deltaTime;
         }
