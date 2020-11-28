@@ -19,10 +19,11 @@ namespace UnityPrototype
 
         private Rigidbody2D m_body => GetComponent<Rigidbody2D>();
         private SimulatedState m_simulationState = null;
+        private bool m_isSimulationActive => m_simulationState != null;
 
         public float mass => m_body.mass;
-        public Vector2 position => m_simulationState != null ? m_simulationState.position : currentPosition;
-        public Vector2 velocity => m_simulationState != null ? m_simulationState.velocity : currentVelocity;
+        public Vector2 position => m_isSimulationActive ? m_simulationState.position : currentPosition;
+        public Vector2 velocity => m_isSimulationActive ? m_simulationState.velocity : currentVelocity;
 
         public Vector2 currentPosition => transform.position;
         public Vector2 currentVelocity => m_body.velocity;
@@ -48,6 +49,23 @@ namespace UnityPrototype
         public void EndSimulation()
         {
             m_simulationState = null;
+        }
+
+        public void ApplyForce(Vector2 force, float dt)
+        {
+            if (m_isSimulationActive)
+            {
+                var a = force / mass;
+                var newVelocity = velocity + a * dt;
+                var newPosition = position + newVelocity * dt;
+
+                m_simulationState.position = newPosition;
+                m_simulationState.velocity = newVelocity;
+            }
+            else
+            {
+                m_body.AddForce(force);
+            }
         }
     }
 }

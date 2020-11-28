@@ -52,18 +52,9 @@ namespace UnityPrototype
         {
             var force = Vector2.zero;
             foreach (var planet in m_planets.bodies)
-            {
                 force += planet.CalculateForce(target);
-            }
 
-            var oldVelocity = target.velocity;
-            var oldPosition = target.position;
-
-            var a = force / target.mass;
-            var newVelocity = oldVelocity + a * dt;
-            var newPosition = oldPosition + newVelocity * dt;
-
-            target.UpdateSimulatedState(newPosition, newVelocity);
+            target.ApplyForce(force, dt);
         }
 
         private void RecordState(Vector2 position)
@@ -84,6 +75,11 @@ namespace UnityPrototype
                 Gizmos.color = Color.red;
                 m_targetPath.DrawGizmos();
             }
+        }
+
+        private void FixedUpdate()
+        {
+            SimulateStep(Time.fixedDeltaTime, m_player);
         }
     }
 }
