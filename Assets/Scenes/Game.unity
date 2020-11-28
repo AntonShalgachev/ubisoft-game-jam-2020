@@ -271,6 +271,51 @@ MonoBehaviour:
   m_gravitationalConstant: 2
   m_simulateInRuntime: 0
   m_ghostPlayer: {fileID: 1932620195}
+  m_simulationRegion: {fileID: 1011669018}
+--- !u!1 &1011669016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011669017}
+  - component: {fileID: 1011669018}
+  m_Layer: 0
+  m_Name: SimulationRegion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011669017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011669016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011669018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011669016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ec70fa00b090541be1e873441e4345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_radius: 8.44
 --- !u!1 &1228739372
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932620194}
   - component: {fileID: 1932620195}
+  - component: {fileID: 1932620196}
   m_Layer: 0
   m_Name: GhostPlayer
   m_TagString: Untagged
@@ -554,6 +600,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036ec2090c5f4f144b57d5ebdb3d8f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1932620196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932620193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18489867b1df4941a577fad4f5bf2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_visual: {fileID: 1724213879}
 --- !u!1001 &4464270519951442025
 PrefabInstance:
   m_ObjectHideFlags: 0

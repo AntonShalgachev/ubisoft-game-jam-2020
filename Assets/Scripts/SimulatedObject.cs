@@ -13,6 +13,7 @@ namespace UnityPrototype
         {
             public Vector2 position;
             public Vector2 velocity;
+            public Vector2 acceleration;
         }
 
         private Vector2 m_initialVelocity => m_initialDirection * m_initialSpeed;
@@ -40,10 +41,17 @@ namespace UnityPrototype
             m_simulationState.velocity = Application.isPlaying ? currentVelocity : m_initialVelocity;
         }
 
-        public void UpdateSimulatedState(Vector2 position, Vector2 velocity)
+        public void UpdateObject(float dt)
         {
-            m_simulationState.position = position;
-            m_simulationState.velocity = velocity;
+            if (m_isSimulationActive)
+            {
+                var newVelocity = velocity + m_simulationState.acceleration * dt;
+                var newPosition = position + newVelocity * dt;
+
+                m_simulationState.position = newPosition;
+                m_simulationState.velocity = newVelocity;
+                m_simulationState.acceleration = Vector2.zero;
+            }
         }
 
         public void EndSimulation()
@@ -51,16 +59,11 @@ namespace UnityPrototype
             m_simulationState = null;
         }
 
-        public void ApplyForce(Vector2 force, float dt)
+        public void ApplyForce(Vector2 force)
         {
             if (m_isSimulationActive)
             {
-                var a = force / mass;
-                var newVelocity = velocity + a * dt;
-                var newPosition = position + newVelocity * dt;
-
-                m_simulationState.position = newPosition;
-                m_simulationState.velocity = newVelocity;
+                m_simulationState.acceleration = force / mass;
             }
             else
             {

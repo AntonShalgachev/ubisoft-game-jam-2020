@@ -9,6 +9,8 @@ namespace UnityPrototype
         private TruePath m_path = null;
         private float m_time = 0.0f;
 
+        public bool hasPath => m_path != null;
+
         public void SetPath(TruePath path)
         {
             m_path = path;
@@ -17,7 +19,7 @@ namespace UnityPrototype
 
         private void Update()
         {
-            if (m_path == null)
+            if (!hasPath)
                 return;
 
             var position = m_path.GetPosition(m_time);

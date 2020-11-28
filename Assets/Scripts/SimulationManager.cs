@@ -13,6 +13,7 @@ namespace UnityPrototype
         [SerializeField] private float m_gravitationalConstant = 1.0f;
         [SerializeField] private bool m_simulateInRuntime = false;
         [SerializeField] private PathFollower m_ghostPlayer = null;
+        [SerializeField] private Region m_simulationRegion = null;
 
         public float gravitationalConstant => m_gravitationalConstant;
 
@@ -29,7 +30,7 @@ namespace UnityPrototype
         private void FixedUpdate()
         {
             if (m_simulateInRuntime)
-                SimulateStep(Time.fixedDeltaTime, m_player);
+                SimulateStep(m_player);
         }
 
         private void CreateTruePath(SimulatedObject target)
@@ -46,14 +47,16 @@ namespace UnityPrototype
 
             m_targetPath.Clear();
 
+            RecordState(target.position, time);
+
             while (time < m_maxTime)
             {
-                RecordState(target.position, time);
-                SimulateStep(dt, target);
+                SimulateStep(target);
                 time += dt;
-            }
+                target.UpdateObject(dt);
 
-            RecordState(target.position, time);
+                RecordState(target.position, time);
+            }
 
             if (!Application.isPlaying)
                 foreach (var planet in FindObjectsOfType<CelestialBody>())
@@ -61,13 +64,16 @@ namespace UnityPrototype
             m_player.EndSimulation();
         }
 
-        private void SimulateStep(float dt, SimulatedObject target)
+        private void SimulateStep(SimulatedObject target)
         {
+            if (m_simulationRegion && !m_simulationRegion.IsInside(target.position))
+                return;
+
             var force = Vector2.zero;
             foreach (var planet in m_planets.bodies)
                 force += planet.CalculateForce(target);
 
-            target.ApplyForce(force, dt);
+            target.ApplyForce(force);
         }
 
         private void RecordState(Vector2 position, float time)
