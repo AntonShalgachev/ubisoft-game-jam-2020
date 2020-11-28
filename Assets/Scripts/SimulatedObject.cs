@@ -36,6 +36,12 @@ namespace UnityPrototype
             m_body.velocity = m_initialVelocity;
         }
 
+        private void FixedUpdate()
+        {
+            if (m_body.velocity.sqrMagnitude > Mathf.Epsilon * Mathf.Epsilon)
+                m_body.rotation = Vector2.SignedAngle(Vector2.up, m_body.velocity);
+        }
+
         public void BeginSimulation()
         {
             m_simulationState = new SimulatedState();

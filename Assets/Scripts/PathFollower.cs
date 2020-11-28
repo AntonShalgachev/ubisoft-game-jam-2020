@@ -23,8 +23,11 @@ namespace UnityPrototype
             if (!hasPath)
                 return;
 
-            var position = m_path.GetPosition(m_time);
+            var point = m_path.GetPoint(m_time);
+
+            var position = point.position;
             transform.SetXY(position.x, position.y);
+            transform.SetRotationZ(Vector2.SignedAngle(Vector2.up, point.velocity));
 
             m_time += Time.deltaTime;
         }

@@ -49,7 +49,7 @@ namespace UnityPrototype
 
             m_targetPath.Clear();
 
-            RecordState(target.position, time);
+            RecordState(target, time);
 
             while (time < m_maxTime)
             {
@@ -57,7 +57,7 @@ namespace UnityPrototype
                 time += dt;
                 target.UpdateObject(dt);
 
-                RecordState(target.position, time);
+                RecordState(target, time);
             }
 
             if (!Application.isPlaying)
@@ -78,9 +78,9 @@ namespace UnityPrototype
             target.ApplyForce(force);
         }
 
-        private void RecordState(Vector2 position, float time)
+        private void RecordState(SimulatedObject target, float time)
         {
-            m_targetPath.AddPoint(position, time);
+            m_targetPath.AddPoint(target, time);
         }
 
         private void OnDrawGizmos()

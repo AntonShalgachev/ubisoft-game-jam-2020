@@ -8,23 +8,25 @@ namespace UnityPrototype
     [CreateAssetMenu(fileName = "TruePath", menuName = "Game/TruePath")]
     public class TruePath : ScriptableObject
     {
-        private struct PathPoint
+        public struct PathPoint
         {
-            public PathPoint(Vector2 position, float time)
+            public PathPoint(Vector2 position, Vector2 vecloity, float time)
             {
                 this.position = position;
+                this.velocity = vecloity;
                 this.time = time;
             }
 
             public Vector2 position;
+            public Vector2 velocity;
             public float time;
         }
 
         private List<PathPoint> m_points = new List<PathPoint>();
 
-        public void AddPoint(Vector2 position, float time)
+        public void AddPoint(SimulatedObject target, float time)
         {
-            m_points.Add(new PathPoint(position, time));
+            m_points.Add(new PathPoint(target.position, target.velocity, time));
         }
 
         public void Clear()
@@ -32,9 +34,9 @@ namespace UnityPrototype
             m_points.Clear();
         }
 
-        public Vector2 GetPosition(float time)
+        public PathPoint GetPoint(float time)
         {
-            Debug.Assert(m_points.Count > 1);
+            Debug.Assert(m_points.Count > 0);
 
             var prevPoint = m_points[0];
 
@@ -45,14 +47,30 @@ namespace UnityPrototype
                 if (time >= prevPoint.time && time < point.time)
                 {
                     var t = Mathf.InverseLerp(prevPoint.time, point.time, time);
-                    return Vector2.Lerp(prevPoint.position, point.position, t);
+
+                    PathPoint lerpedPoint;
+                    lerpedPoint.time = time;
+                    lerpedPoint.position = Vector2.Lerp(prevPoint.position, point.position, t);
+                    lerpedPoint.velocity = Vector2.Lerp(prevPoint.velocity, point.velocity, t);
+
+                    return lerpedPoint;
                 }
 
                 prevPoint = point;
             }
 
-            return prevPoint.position;
+            return prevPoint;
         }
+
+        // public Vector2 GetPosition(float time)
+        // {
+
+        // }
+
+        // public Vector2 GetTangent(float time)
+        // {
+
+        // }
 
         public void DrawGizmos()
         {
