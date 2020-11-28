@@ -6,7 +6,7 @@ namespace UnityPrototype
 {
     public class GhostPlayer : MonoBehaviour
     {
-        [SerializeField] private GameObject m_visual;
+        [SerializeField] private GameObject m_visual = null;
 
         private void Update()
         {
