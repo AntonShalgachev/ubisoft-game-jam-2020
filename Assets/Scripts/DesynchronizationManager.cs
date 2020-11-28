@@ -16,7 +16,8 @@ namespace UnityPrototype
         [SerializeField] private float m_extremeDesyncDuration = 5.0f;
 
         [ShowNativeProperty] private float m_maxDesyncRate => 1.0f / m_extremeDesyncDuration;
-        [ShowNonSerializedField] private float m_desynchronization = 0.0f;
+
+        [ProgressBar("Desynchronization", 1.0f, EColor.Red)] public float m_desynchronization = 0.0f;
 
         [ShowNativeProperty] private float m_currentDesyncRate => GetCurrentDesyncRate();
 
