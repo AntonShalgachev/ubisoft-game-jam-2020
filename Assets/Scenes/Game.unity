@@ -240,7 +240,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 13.06
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -534,12 +534,12 @@ PrefabInstance:
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3700001
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
@@ -697,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 4464270519951573881, guid: e0656554be83816479cab6a177f0feea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -10.82
       objectReference: {fileID: 0}
     - target: {fileID: 4464270519951573881, guid: e0656554be83816479cab6a177f0feea,
         type: 3}
@@ -756,12 +756,12 @@ PrefabInstance:
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.27
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
@@ -808,10 +808,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121051183718474978, guid: 16583fc1f119fd142943c7f66ce65137,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6121051183718474979, guid: 16583fc1f119fd142943c7f66ce65137,
         type: 3}
       propertyPath: m_Name
       value: Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8130706963215224004, guid: 16583fc1f119fd142943c7f66ce65137,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16583fc1f119fd142943c7f66ce65137, type: 3}
