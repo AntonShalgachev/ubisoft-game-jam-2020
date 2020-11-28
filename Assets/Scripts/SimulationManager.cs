@@ -12,6 +12,7 @@ namespace UnityPrototype
         [SerializeField] private float m_maxTime = 10.0f;
         [SerializeField] private float m_gravitationalConstant = 1.0f;
         [SerializeField] private bool m_simulateInRuntime = false;
+        [SerializeField] private PathFollower m_ghostPlayer = null;
 
         public float gravitationalConstant => m_gravitationalConstant;
 
@@ -19,7 +20,19 @@ namespace UnityPrototype
 
         [ShowNativeProperty] private TruePath targetPath => m_targetPath;
 
-        private void Simulate(SimulatedObject target)
+        private void Start()
+        {
+            CreateTruePath(m_player);
+            m_ghostPlayer.SetPath(m_targetPath);
+        }
+
+        private void FixedUpdate()
+        {
+            if (m_simulateInRuntime)
+                SimulateStep(Time.fixedDeltaTime, m_player);
+        }
+
+        private void CreateTruePath(SimulatedObject target)
         {
             var dt = Time.fixedDeltaTime;
             var time = 0.0f;
@@ -32,15 +45,15 @@ namespace UnityPrototype
                     planet.RegisterBody();
 
             m_targetPath.Clear();
-            RecordState(target.position);
 
             while (time < m_maxTime)
             {
+                RecordState(target.position, time);
                 SimulateStep(dt, target);
-                RecordState(target.position);
-
                 time += dt;
             }
+
+            RecordState(target.position, time);
 
             if (!Application.isPlaying)
                 foreach (var planet in FindObjectsOfType<CelestialBody>())
@@ -57,15 +70,9 @@ namespace UnityPrototype
             target.ApplyForce(force, dt);
         }
 
-        private void RecordState(Vector2 position)
+        private void RecordState(Vector2 position, float time)
         {
-            m_targetPath.AddPoint(position);
-        }
-
-        [Button("Simulate")]
-        private void SimulatePlayer()
-        {
-            Simulate(m_player);
+            m_targetPath.AddPoint(position, time);
         }
 
         private void OnDrawGizmos()
@@ -77,10 +84,10 @@ namespace UnityPrototype
             }
         }
 
-        private void FixedUpdate()
+        [Button("Simulate")]
+        private void SimulatePlayer()
         {
-            if (m_simulateInRuntime)
-                SimulateStep(Time.fixedDeltaTime, m_player);
+            CreateTruePath(m_player);
         }
     }
 }

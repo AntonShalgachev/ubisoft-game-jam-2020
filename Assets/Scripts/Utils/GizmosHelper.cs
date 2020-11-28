@@ -38,22 +38,29 @@ namespace UnityPrototype
 
         public static void DrawCurve(IEnumerable<Vector2> points, float pointSize = -1.0f, bool wireframePoint = false)
         {
-            Vector2? prevPoint = null;
+            DrawCurve(points, (Vector2 point) => point, pointSize, wireframePoint);
+        }
+
+        public static void DrawCurve<PointType>(IEnumerable<PointType> points, System.Func<PointType, Vector2> getPosition, float pointSize = -1.0f, bool wireframePoint = false)
+        {
+            Vector2? prevPosition = null;
 
             foreach (var point in points)
             {
-                if (prevPoint.HasValue)
-                    Gizmos.DrawLine(prevPoint.Value, point);
+                var position = getPosition(point);
+
+                if (prevPosition.HasValue)
+                    Gizmos.DrawLine(prevPosition.Value, position);
 
                 if (pointSize > 0.0f)
                 {
                     if (wireframePoint)
-                        GizmosHelper.DrawCircle(point, pointSize);
+                        GizmosHelper.DrawCircle(position, pointSize);
                     else
-                        Gizmos.DrawSphere(point, pointSize);
+                        Gizmos.DrawSphere(position, pointSize);
                 }
 
-                prevPoint = point;
+                prevPosition = position;
             }
         }
     }
