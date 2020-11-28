@@ -9,9 +9,9 @@ namespace UnityPrototype
     {
         [SerializeField] private CelestialBodyContainer m_planets = null;
         [SerializeField] private SimulatedObject m_player = null;
-        // [SerializeField] private TruePath m_targetPath = null;
         [SerializeField] private float m_maxTime = 10.0f;
         [SerializeField] private float m_gravitationalConstant = 1.0f;
+        [SerializeField] private bool m_simulateInRuntime = false;
 
         public float gravitationalConstant => m_gravitationalConstant;
 
@@ -79,7 +79,8 @@ namespace UnityPrototype
 
         private void FixedUpdate()
         {
-            SimulateStep(Time.fixedDeltaTime, m_player);
+            if (m_simulateInRuntime)
+                SimulateStep(Time.fixedDeltaTime, m_player);
         }
     }
 }

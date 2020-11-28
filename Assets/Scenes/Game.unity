@@ -269,6 +269,7 @@ MonoBehaviour:
   m_player: {fileID: 131859}
   m_maxTime: 10
   m_gravitationalConstant: 2
+  m_simulateInRuntime: 0
 --- !u!1 &1228739372
 GameObject:
   m_ObjectHideFlags: 0
