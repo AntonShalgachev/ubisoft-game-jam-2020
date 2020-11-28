@@ -7,7 +7,14 @@ namespace UnityPrototype
 {
     public class PlayerInputListener : MonoBehaviour
     {
+        private enum InputType
+        {
+            World,
+            Local,
+        }
+
         [SerializeField] private float m_thrusterMaxForce = 1.0f;
+        [SerializeField] private InputType m_inputType = InputType.World;
 
         private SimulatedObject m_simulatedObject => GetComponent<SimulatedObject>();
         private SimulationManager m_simulationManager => GameComponentsLocator.Get<SimulationManager>();
@@ -21,7 +28,11 @@ namespace UnityPrototype
 
         private void FixedUpdate()
         {
-            var force = m_lastInput * m_thrusterMaxForce;
+            var worldInput = m_lastInput;
+            if (m_inputType == InputType.Local)
+                worldInput = transform.TransformDirection(m_lastInput);
+
+            var force = worldInput * m_thrusterMaxForce;
             force *= m_simulationManager.timeScale * m_simulationManager.timeScale;
             m_simulatedObject.ApplyForce(force);
         }
