@@ -1,0 +1,25 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: Earth
+Author: Poly by Google
+URL: https://poly.google.com/view/58PjkXNdpPb
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Jupiter
+Author: Poly by Google
+URL: https://poly.google.com/view/e_2JJbbD6fU
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Mars
+Author: Poly by Google
+URL: https://poly.google.com/view/dsrYdi4GZ8U
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Neptune
+Author: Poly by Google
+URL: https://poly.google.com/view/cgAMaxYgk5x
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
