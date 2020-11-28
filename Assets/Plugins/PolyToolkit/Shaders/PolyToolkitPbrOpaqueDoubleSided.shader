@@ -20,6 +20,7 @@ Shader "Poly/PbrOpaqueDoubleSided" {
     _BaseColorTex ("Base Color Texture", 2D) = "white" {}
     _MetallicFactor ("Metallic Factor", Range(0,1)) = 1.0
     _RoughnessFactor ("Roughness Factor", Range(0,1)) = 1.0
+    _GrayscaleFactor ("Grayscale Factor", Range(0,1)) = 0.0
   }
   SubShader {
     Cull Off
@@ -47,10 +48,15 @@ Shader "Poly/PbrOpaqueDoubleSided" {
     fixed4 _BaseColorFactor;
     half _MetallicFactor;
     half _RoughnessFactor;
+    half _GrayscaleFactor;
 
     void surf (Input IN, inout SurfaceOutputStandard o) {
       // Albedo comes from a texture tinted by color
       float4 c = tex2D(_BaseColorTex, IN.uv_BaseColorTex) * _BaseColorFactor * IN.color;
+
+      float intensity = dot(float3(0.222, 0.707, 0.071), c.rgb);
+      c.rgb = lerp(c.rgb, float3(1, 1, 1) * intensity, _GrayscaleFactor);
+
       o.Normal = float3(0, 0, IN.vface);
       o.Albedo = c.rgb;
       // Metallic and smoothness come from parameters.
