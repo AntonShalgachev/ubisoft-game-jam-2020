@@ -64,8 +64,13 @@ namespace UnityPrototype
             }
             else
             {
-                m_body.AddForce(force);
+                AddRuntimeForce(force);
             }
+        }
+
+        public void AddRuntimeForce(Vector2 force)
+        {
+            m_body.AddForce(force);
         }
     }
 }

@@ -7,7 +7,6 @@ namespace UnityPrototype
     public class CelestialBody : MonoBehaviour
     {
         [SerializeField] private CelestialBodyContainer m_celestialBodyGroup = null;
-        [SerializeField] private float m_mass = 1.0f;
 
         public SimulatedObject simulatedObject => GetComponent<SimulatedObject>();
 
