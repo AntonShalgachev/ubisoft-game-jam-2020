@@ -18,6 +18,7 @@ namespace UnityPrototype
         [ShowNativeProperty] private float m_maxDesyncRate => 1.0f / m_extremeDesyncDuration;
 
         [ProgressBar("Desynchronization", 1.0f, EColor.Red)] public float m_desynchronization = 0.0f;
+        public float desynchronization => m_desynchronization;
 
         [ShowNativeProperty] private float m_currentDesyncRate => GetCurrentDesyncRate();
 
