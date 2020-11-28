@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4809085556302214781}
   m_Layer: 0
-  m_Name: Visual
+  m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,17 +101,17 @@ PrefabInstance:
     - target: {fileID: 6940204274606822233, guid: 84afd954c73982d418b0098335f5f57f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6940204274606822233, guid: 84afd954c73982d418b0098335f5f57f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6940204274606822233, guid: 84afd954c73982d418b0098335f5f57f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84afd954c73982d418b0098335f5f57f, type: 3}
