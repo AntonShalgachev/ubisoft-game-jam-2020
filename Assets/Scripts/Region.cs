@@ -7,6 +7,7 @@ namespace UnityPrototype
     public class Region : MonoBehaviour
     {
         [SerializeField] private float m_radius = 5.0f;
+        [SerializeField] private Color m_gizmoColor = Color.black;
 
         private Vector2 m_center => transform.position;
 
@@ -18,7 +19,7 @@ namespace UnityPrototype
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.black;
+            Gizmos.color = m_gizmoColor;
             GizmosHelper.DrawCircle(m_center, m_radius, 64);
         }
     }
