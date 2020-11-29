@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_thrusterMaxForce: 0.2
+  m_inputType: 1
 --- !u!1001 &5680828694768793907
 PrefabInstance:
   m_ObjectHideFlags: 0

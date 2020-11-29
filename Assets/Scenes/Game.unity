@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 519753914}
   m_Follow: {fileID: 519753914}
   m_Lens:
     FieldOfView: 60
@@ -1296,7 +1296,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1130434, y: 1}
+    m_SensorSize: {x: 1.2782608, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6166,7 +6166,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1130434, y: 1}
+    m_SensorSize: {x: 1.2782608, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6648,6 +6648,7 @@ GameObject:
   - component: {fileID: 2080373776}
   - component: {fileID: 2080373779}
   - component: {fileID: 2080373777}
+  - component: {fileID: 2080373778}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -6712,6 +6713,19 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &2080373778
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080373775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c41ac9245b87c4192012080077d830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damping: 0
 --- !u!114 &2080373779
 MonoBehaviour:
   m_ObjectHideFlags: 3
