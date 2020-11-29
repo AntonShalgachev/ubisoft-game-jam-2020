@@ -62,6 +62,16 @@ namespace UnityPrototype
             return prevPoint;
         }
 
+        public Vector3[] GetPositions()
+        {
+            Vector3[] positions = new Vector3[m_points.Count];
+
+            for (var i = 0; i < m_points.Count; i++)
+                positions[i] = m_points[i].position;
+
+            return positions;
+        }
+
         // public Vector2 GetPosition(float time)
         // {
 

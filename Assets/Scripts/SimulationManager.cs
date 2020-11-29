@@ -27,6 +27,7 @@ namespace UnityPrototype
         {
             RecreatePlayerTruePath();
             m_ghostPlayer.SetPath(m_targetPath);
+            GameComponentsLocator.Get<PathVisual>().SetPath(m_targetPath);
         }
 
         private void FixedUpdate()

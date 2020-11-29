@@ -21,6 +21,7 @@ namespace UnityPrototype
         public float desynchronization => m_desynchronization;
 
         [ShowNativeProperty] private float m_currentDesyncRate => GetCurrentDesyncRate();
+        public float currentDesyncRate => m_currentDesyncRate;
 
         private bool m_desynchronized = false;
         public bool desynchronized => m_desynchronized;
