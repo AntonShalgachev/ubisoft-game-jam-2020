@@ -46,7 +46,8 @@ namespace UnityPrototype
         {
             m_simulationState = new SimulatedState();
             m_simulationState.position = currentPosition;
-            m_simulationState.velocity = Application.isPlaying ? currentVelocity : m_initialVelocity;
+            m_simulationState.velocity = m_initialVelocity;
+            // Debug.Log($"BeginSimulation: initial velocity is {m_initialVelocity}, time scale {m_simulationManager.timeScale}");
         }
 
         public void UpdateObject(float dt)
