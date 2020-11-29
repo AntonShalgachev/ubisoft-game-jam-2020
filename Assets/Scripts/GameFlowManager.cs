@@ -11,6 +11,7 @@ namespace UnityPrototype
         [SerializeField] private float m_scaleDuration = 1.0f;
         [SerializeField] private float m_slowdownDuration = 1.0f;
         [SerializeField] private float m_collapseStartThreshold = 1.0f;
+        [SerializeField] private float m_farewellDelay = 1.0f;
 
         [ShowNativeProperty] public float singularityProgress { get; private set; } = 0.0f;
         [ShowNativeProperty] public float scale { get; private set; } = 0.0f;
@@ -24,6 +25,8 @@ namespace UnityPrototype
             GameplayLoop,
             Desynchronized,
             Success,
+            Farewell,
+            PostFarewell,
         }
 
         public State state { get; private set; } = State.Intro;
@@ -31,8 +34,8 @@ namespace UnityPrototype
 
         private void Update()
         {
-            var isIntro = state == State.Intro;
-            Time.timeScale = isIntro ? 0.0f : 1.0f;
+            var isGameplay = state == State.Intro || state == State.Farewell;
+            Time.timeScale = isGameplay ? 0.0f : 1.0f;
 
             var desyncManager = GameComponentsLocator.Get<DesynchronizationManager>();
             var trackingManager = GameComponentsLocator.Get<TrackingManager>();
@@ -55,6 +58,11 @@ namespace UnityPrototype
             state = State.GameplayLoop;
         }
 
+        public void OnFarewellCompleted()
+        {
+            Debug.Log("Farewell done");
+        }
+
         [Button("Desync")]
         private void OnDesync()
         {
@@ -67,6 +75,16 @@ namespace UnityPrototype
         private void OnSuccess()
         {
             Debug.Log("Success");
+            StartCoroutine(ShowFarewell());
+        }
+
+        private IEnumerator ShowFarewell()
+        {
+            yield return new WaitForSecondsRealtime(m_farewellDelay);
+            state = State.Farewell;
+
+            var successDialogues = GameComponentsLocator.Get<SuccessDialogues>();
+            successDialogues.ShowFarewell();
         }
 
         private IEnumerator CollapseToSingularity()
