@@ -16,9 +16,18 @@ MonoBehaviour:
   enabled:
     overrideState: 1
     value: 1
-  radius:
-    overrideState: 0
-    value: 0.8
+  minPower:
+    overrideState: 1
+    value: 1
+  maxPower:
+    overrideState: 1
+    value: 20
+  singularityProgress:
+    overrideState: 1
+    value: 0
+  scale:
+    overrideState: 1
+    value: 0
   background:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
