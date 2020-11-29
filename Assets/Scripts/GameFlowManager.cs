@@ -28,13 +28,13 @@ namespace UnityPrototype
             var desyncManager = GameComponentsLocator.Get<DesynchronizationManager>();
             var trackingManager = GameComponentsLocator.Get<TrackingManager>();
 
-            if (m_state != State.Desynchronized && desyncManager.desynchronized)
+            if (m_state == State.GameplayLoop && desyncManager.desynchronized)
             {
                 m_state = State.Desynchronized;
                 OnDesync();
             }
 
-            if (m_state != State.Success && trackingManager.state == TrackingManager.State.LeftGravityZone)
+            if (m_state == State.GameplayLoop && trackingManager.state == TrackingManager.State.LeftGravityZone)
             {
                 m_state = State.Success;
                 OnSuccess();
