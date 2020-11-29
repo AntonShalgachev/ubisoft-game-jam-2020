@@ -328,7 +328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ghostPlayer: {fileID: 1932620194}
   m_player: {fileID: 131859}
-  m_slowdownDuration: 2.5
   m_minOffset: 0.47
   m_maxOffset: 2
   m_extremeDesyncDuration: 10
@@ -6575,6 +6574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_singularityDuration: 2
   m_scaleDuration: 1
+  m_slowdownDuration: 2.5
+  m_collapseStartThreshold: 0.8
 --- !u!1001 &1651405849
 PrefabInstance:
   m_ObjectHideFlags: 0

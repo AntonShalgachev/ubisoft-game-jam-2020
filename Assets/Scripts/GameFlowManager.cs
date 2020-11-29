@@ -9,9 +9,14 @@ namespace UnityPrototype
     {
         [SerializeField] private float m_singularityDuration = 1.0f;
         [SerializeField] private float m_scaleDuration = 1.0f;
+        [SerializeField] private float m_slowdownDuration = 1.0f;
+        [SerializeField] private float m_collapseStartThreshold = 1.0f;
 
         [ShowNativeProperty] public float singularityProgress { get; private set; } = 0.0f;
         [ShowNativeProperty] public float scale { get; private set; } = 0.0f;
+
+        private float m_slowdownRatio = 0.0f;
+        public float slowdownRatio => m_slowdownRatio;
 
         private enum State
         {
@@ -45,6 +50,7 @@ namespace UnityPrototype
         private void OnDesync()
         {
             Debug.Log("Desync");
+            StartCoroutine(Slowdown());
             StartCoroutine(CollapseToSingularity());
         }
 
@@ -64,7 +70,9 @@ namespace UnityPrototype
             {
                 singularityProgress = Mathf.InverseLerp(0.0f, m_singularityDuration, singularityTime);
 
-                singularityTime += Time.unscaledDeltaTime;
+                if (m_slowdownRatio >= m_collapseStartThreshold)
+                    singularityTime += Time.unscaledDeltaTime;
+
                 yield return null;
             }
 
@@ -74,6 +82,21 @@ namespace UnityPrototype
                 scale = Mathf.InverseLerp(0.0f, m_scaleDuration, scaleTime);
 
                 scaleTime += Time.unscaledDeltaTime;
+                yield return null;
+            }
+        }
+
+        private IEnumerator Slowdown()
+        {
+            float initialTimescale = Time.timeScale;
+            float time = 0.0f;
+
+            while (time < m_slowdownDuration)
+            {
+                m_slowdownRatio = Mathf.InverseLerp(0.0f, m_slowdownDuration, time);
+                Time.timeScale = Mathf.Lerp(initialTimescale, 0.0f, m_slowdownRatio);
+
+                time += Time.unscaledDeltaTime;
                 yield return null;
             }
         }

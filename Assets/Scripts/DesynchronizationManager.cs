@@ -9,7 +9,6 @@ namespace UnityPrototype
     {
         [SerializeField] private Transform m_ghostPlayer = null;
         [SerializeField] private SimulatedObject m_player = null;
-        [SerializeField] private float m_slowdownDuration = 1.0f;
 
         [Header("Desynchronization calculation")]
         [SerializeField] private float m_minOffset = 1.0f;
@@ -26,9 +25,6 @@ namespace UnityPrototype
         private bool m_desynchronized = false;
         public bool desynchronized => m_desynchronized;
 
-        private float m_slowdownRatio = 0.0f;
-        public float slowdownRatio => m_slowdownRatio;
-
         private void FixedUpdate()
         {
             if (m_desynchronized)
@@ -38,25 +34,7 @@ namespace UnityPrototype
             UpdateDesynchronization(dt);
 
             if (m_desynchronization > 1.0f)
-            {
-                StartCoroutine(Slowdown());
                 m_desynchronized = true;
-            }
-        }
-
-        private IEnumerator Slowdown()
-        {
-            float initialTimescale = Time.timeScale;
-            float time = 0.0f;
-
-            while (time < m_slowdownDuration)
-            {
-                m_slowdownRatio = Mathf.InverseLerp(0.0f, m_slowdownDuration, time);
-                Time.timeScale = Mathf.Lerp(initialTimescale, 0.0f, m_slowdownRatio);
-
-                time += Time.unscaledDeltaTime;
-                yield return null;
-            }
         }
 
         private float GetCurrentDesyncRate()

@@ -10,13 +10,10 @@ namespace UnityPrototype
 
         private void Update()
         {
-            var desyncManager = GameComponentsLocator.Get<DesynchronizationManager>();
+            var flowManager = GameComponentsLocator.Get<GameFlowManager>();
 
-            if (desyncManager.desynchronized)
-            {
-                var source = GetComponent<AudioSource>();
-                source.pitch = Mathf.Lerp(1.0f, m_minPitch, desyncManager.slowdownRatio);
-            }
+            var source = GetComponent<AudioSource>();
+            source.pitch = Mathf.Lerp(1.0f, m_minPitch, flowManager.slowdownRatio);
         }
     }
 }
