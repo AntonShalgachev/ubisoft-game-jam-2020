@@ -403,9 +403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ghostPlayer: {fileID: 1932620194}
   m_player: {fileID: 131859}
-  m_minOffset: 0.47
-  m_maxOffset: 2
-  m_extremeDesyncDuration: 10
+  m_minOffset: 0.3
+  m_maxOffset: 1.3
+  m_extremeDesyncDuration: 7
   m_desynchronization: 0
 --- !u!1 &519420028
 GameObject:
@@ -549,7 +549,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18.1
+  orthographic size: 28.39
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2072,7 +2072,7 @@ MonoBehaviour:
   m_Follow: {fileID: 519753914}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 3.6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7022,7 +7022,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 18.1
+    OrthographicSize: 28.39
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7995,6 +7995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014595901916497971, guid: e0656554be83816479cab6a177f0feea,
+        type: 3}
+      propertyPath: m_thrusterMaxForce
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0656554be83816479cab6a177f0feea, type: 3}
