@@ -1184,11 +1184,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogueManager: {fileID: 997702440}
   m_lines:
-  - Oh no, the gravity just disappeared!/wait:2//close/
+  - Oh no, the gravity just disappeared!
   - But what do we do? The universe will collapse if our ship doesn't follow the
-    gravity!/wait:2//close/
+    gravity!
   - That's right, we /color:red/have/color:white/ to follow the trajectory as if
-    nothing happened. Otherwise the universe is doomed! Let's do it!/wait:2//close/
+    nothing happened. Otherwise the universe is doomed! Let's do it!
 --- !u!1 &1172549771
 GameObject:
   m_ObjectHideFlags: 0
