@@ -26,6 +26,7 @@ namespace UnityPrototype
 
         private void OnEnable()
         {
+            Debug.Log($"Regestering self");
             RegisterBody();
         }
 

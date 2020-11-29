@@ -14,6 +14,7 @@ namespace UnityPrototype
 
         public void SetPath(TruePath path)
         {
+            Debug.Log($"PathFollower: path set with {path.GetPositions().Length} points");
             m_path = path;
             m_time = 0.0f;
         }
@@ -24,6 +25,8 @@ namespace UnityPrototype
                 return;
 
             var point = m_path.GetPoint(m_time);
+
+            // Debug.Log($"Point for {m_time} : {point.position} at {point.time}");
 
             var position = point.position;
             transform.SetXY(position.x, position.y);

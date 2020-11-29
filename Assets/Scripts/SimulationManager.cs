@@ -7,6 +7,7 @@ namespace UnityPrototype
 {
     public class SimulationManager : MonoBehaviour
     {
+        [SerializeField] private TruePath m_targetPath = null;
         [SerializeField] private CelestialBodyContainer m_planets = null;
         [SerializeField] private SimulatedObject m_player = null;
         [SerializeField] private float m_maxTime = 10.0f;
@@ -19,7 +20,7 @@ namespace UnityPrototype
         public float gravitationalConstant => m_gravitationalConstant * m_timeScale * m_timeScale;
         public float timeScale => m_timeScale;
 
-        private TruePath m_targetPath = null;
+        // private TruePath m_targetPath = null;
 
         [ShowNativeProperty] private TruePath targetPath => m_targetPath;
 
@@ -41,7 +42,7 @@ namespace UnityPrototype
             var dt = Time.fixedDeltaTime;
             var time = 0.0f;
 
-            m_targetPath = ScriptableObject.CreateInstance<TruePath>();
+            // m_targetPath = ScriptableObject.CreateInstance<TruePath>();
 
             m_player.BeginSimulation();
             if (!Application.isPlaying)
@@ -65,6 +66,8 @@ namespace UnityPrototype
                 foreach (var planet in FindObjectsOfType<CelestialBody>())
                     planet.UnregisterBody();
             m_player.EndSimulation();
+
+            Debug.Log($"Created path with {m_targetPath.GetPositions().Length} points");
         }
 
         private void SimulateStep(SimulatedObject target)

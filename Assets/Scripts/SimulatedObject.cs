@@ -57,6 +57,8 @@ namespace UnityPrototype
                 var newVelocity = velocity + m_simulationState.acceleration * dt;
                 var newPosition = position + newVelocity * dt;
 
+                // Debug.Log($"Updating object in simulation: position {newPosition}, velocity {velocity}/{m_simulationState.velocity} -> {newVelocity}");
+
                 m_simulationState.position = newPosition;
                 m_simulationState.velocity = newVelocity;
                 m_simulationState.acceleration = Vector2.zero;
@@ -65,6 +67,7 @@ namespace UnityPrototype
 
         public void EndSimulation()
         {
+            // Debug.Log("EndSimulation");
             m_simulationState = null;
         }
 

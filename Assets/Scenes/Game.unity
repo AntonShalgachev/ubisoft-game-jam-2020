@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb119c77aafab42409fbf6dede41e164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_targetPath: {fileID: 11400000, guid: a3b79e6e9883f5a4d9c2df3a140156bd, type: 2}
   m_planets: {fileID: 11400000, guid: 48231dcbda08fe04f98b4b231d38e15b, type: 2}
   m_player: {fileID: 131859}
   m_maxTime: 50
@@ -1833,7 +1834,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.26943, y: 1}
+    m_SensorSize: {x: 1.2672414, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6703,7 +6704,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.26943, y: 1}
+    m_SensorSize: {x: 1.2672414, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

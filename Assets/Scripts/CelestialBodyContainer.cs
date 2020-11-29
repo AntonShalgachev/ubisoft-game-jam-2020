@@ -13,6 +13,7 @@ namespace UnityPrototype
 
         public void RegisterBody(CelestialBody body)
         {
+            Debug.Log($"Registered body {body.name}");
             m_bodies.Add(body);
         }
 
