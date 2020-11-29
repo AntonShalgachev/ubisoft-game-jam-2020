@@ -336,7 +336,11 @@ namespace Doublsb.Dialog
 
         public void _emote(string Text)
         {
-            _current_Character.GetComponent<Image>().sprite = _current_Character.Emotion.Data[Text];
+            var sprite = _current_Character.Emotion.Data[Text];
+
+            var image = _current_Character.GetComponent<Image>();
+            image.sprite = sprite;
+            image.enabled = sprite != null;
         }
 
         private IEnumerator _skip()
