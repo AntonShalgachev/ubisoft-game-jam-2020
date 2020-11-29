@@ -17,25 +17,41 @@ namespace UnityPrototype
         {
             GameplayLoop,
             Desynchronized,
+            Success,
         }
 
         private State m_state = State.GameplayLoop;
+        [ShowNativeProperty] private string m_stateString => m_state.ToString();
 
         private void Update()
         {
             var desyncManager = GameComponentsLocator.Get<DesynchronizationManager>();
+            var trackingManager = GameComponentsLocator.Get<TrackingManager>();
 
             if (m_state != State.Desynchronized && desyncManager.desynchronized)
             {
                 m_state = State.Desynchronized;
                 OnDesync();
             }
+
+            if (m_state != State.Success && trackingManager.state == TrackingManager.State.LeftGravityZone)
+            {
+                m_state = State.Success;
+                OnSuccess();
+            }
         }
 
         [Button("Desync")]
         private void OnDesync()
         {
+            Debug.Log("Desync");
             StartCoroutine(CollapseToSingularity());
+        }
+
+        [Button("Success")]
+        private void OnSuccess()
+        {
+            Debug.Log("Success");
         }
 
         private IEnumerator CollapseToSingularity()
