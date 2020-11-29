@@ -8,7 +8,7 @@ namespace UnityPrototype
     public class IntroDialogues : MonoBehaviour
     {
         [SerializeField] private DialogManager m_dialogueManager = null;
-        [SerializeField] private string[] m_lines;
+        [SerializeField, TextArea] private string[] m_lines;
 
         private void Start()
         {
