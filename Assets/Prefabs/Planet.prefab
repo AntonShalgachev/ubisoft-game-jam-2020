@@ -27,8 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
-  m_Children:
-  - {fileID: 5138057894496008010}
+  m_Children: []
   m_Father: {fileID: 6121051183718474978}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -146,78 +145,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1001 &2842551824355001711
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 565271075228052858}
-    m_Modifications:
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779263748446107866, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-        type: 3}
-      propertyPath: m_Name
-      value: Earth_Poly_by_Google_58PjkXNdpPb
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 20cb36dc795160949bfe2b5f909b2bdc, type: 3}
---- !u!4 &5138057894496008010 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6934639336986178085, guid: 20cb36dc795160949bfe2b5f909b2bdc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2842551824355001711}
-  m_PrefabAsset: {fileID: 0}

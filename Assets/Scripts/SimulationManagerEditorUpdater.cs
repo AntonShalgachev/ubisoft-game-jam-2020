@@ -11,8 +11,8 @@ namespace UnityPrototype
 
         private void Update()
         {
-            // if (m_recreatePath && !Application.isPlaying)
-            //     GetComponent<SimulationManager>().RecreatePlayerTruePath();
+            if (m_recreatePath && !Application.isPlaying)
+                GetComponent<SimulationManager>().RecreatePlayerTruePath();
         }
     }
 }
