@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.InputSystem;
 
 namespace Doublsb.Dialog
 {
@@ -313,7 +314,7 @@ namespace Doublsb.Dialog
 
         private IEnumerator _waitInput()
         {
-            while (!Input.GetMouseButtonDown(0)) yield return null;
+            while (!Mouse.current.leftButton.wasPressedThisFrame) yield return null;
             _currentDelay = _lastDelay;
         }
 
