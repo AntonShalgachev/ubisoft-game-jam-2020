@@ -32,6 +32,8 @@ namespace UnityPrototype
         public State state { get; private set; } = State.Intro;
         [ShowNativeProperty] private string m_stateString => state.ToString();
 
+        public bool canRestart => state == State.Desynchronized || state == State.PostFarewell;
+
         private void Update()
         {
             var isGameplay = state == State.Intro || state == State.Farewell;
@@ -61,6 +63,7 @@ namespace UnityPrototype
         public void OnFarewellCompleted()
         {
             Debug.Log("Farewell done");
+            state = State.PostFarewell;
         }
 
         [Button("Desync")]
