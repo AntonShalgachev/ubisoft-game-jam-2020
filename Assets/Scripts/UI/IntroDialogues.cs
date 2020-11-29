@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Doublsb.Dialog;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UnityPrototype
 {
@@ -14,10 +15,22 @@ namespace UnityPrototype
         {
             var dialogTexts = new List<DialogData>();
 
-            foreach (var line in m_lines)
-                dialogTexts.Add(new DialogData(line, "CrewMember"));
+            for (var i = 0; i < m_lines.Length; i++)
+            {
+                var line = m_lines[i];
+                var isLast = i == m_lines.Length - 1;
+                UnityAction onClosed = isLast ? OnLastDialogueClosed : (UnityAction)null;
+                dialogTexts.Add(new DialogData(line, "CrewMember", onClosed));
+            }
 
             m_dialogueManager.Show(dialogTexts);
+        }
+
+        private void OnLastDialogueClosed()
+        {
+            Debug.Log("Dialogue closed");
+            var flowManager = GameComponentsLocator.Get<UnityPrototype.GameFlowManager>();
+            flowManager.OnIntroComplete();
         }
     }
 }

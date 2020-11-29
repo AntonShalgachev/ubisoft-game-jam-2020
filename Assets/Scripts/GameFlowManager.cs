@@ -18,32 +18,41 @@ namespace UnityPrototype
         private float m_slowdownRatio = 0.0f;
         public float slowdownRatio => m_slowdownRatio;
 
-        private enum State
+        public enum State
         {
+            Intro,
             GameplayLoop,
             Desynchronized,
             Success,
         }
 
-        private State m_state = State.GameplayLoop;
-        [ShowNativeProperty] private string m_stateString => m_state.ToString();
+        public State state { get; private set; } = State.Intro;
+        [ShowNativeProperty] private string m_stateString => state.ToString();
 
         private void Update()
         {
+            var isIntro = state == State.Intro;
+            Time.timeScale = isIntro ? 0.0f : 1.0f;
+
             var desyncManager = GameComponentsLocator.Get<DesynchronizationManager>();
             var trackingManager = GameComponentsLocator.Get<TrackingManager>();
 
-            if (m_state == State.GameplayLoop && desyncManager.desynchronized)
+            if (state == State.GameplayLoop && desyncManager.desynchronized)
             {
-                m_state = State.Desynchronized;
+                state = State.Desynchronized;
                 OnDesync();
             }
 
-            if (m_state == State.GameplayLoop && trackingManager.state == TrackingManager.State.LeftGravityZone)
+            if (state == State.GameplayLoop && trackingManager.state == TrackingManager.State.LeftGravityZone)
             {
-                m_state = State.Success;
+                state = State.Success;
                 OnSuccess();
             }
+        }
+
+        public void OnIntroComplete()
+        {
+            state = State.GameplayLoop;
         }
 
         [Button("Desync")]

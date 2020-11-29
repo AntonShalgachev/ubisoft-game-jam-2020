@@ -28,6 +28,13 @@ namespace UnityPrototype
 
         private void FixedUpdate()
         {
+            var flowManager = GameComponentsLocator.Get<GameFlowManager>();
+            var trackingManager = GameComponentsLocator.Get<TrackingManager>();
+            if (flowManager.state != GameFlowManager.State.GameplayLoop)
+                return;
+            if (trackingManager.state != TrackingManager.State.EnteredGravityZone)
+                return;
+
             var worldInput = m_lastInput;
             if (m_inputType == InputType.Local)
                 worldInput = transform.TransformDirection(m_lastInput);

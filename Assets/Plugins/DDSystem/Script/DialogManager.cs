@@ -304,7 +304,7 @@ namespace Doublsb.Dialog
                         yield break;
 
                     case Command.wait:
-                        yield return new WaitForSeconds(float.Parse(item.Context));
+                        yield return new WaitForSecondsRealtime(float.Parse(item.Context));
                         break;
                 }
             }
@@ -328,7 +328,7 @@ namespace Doublsb.Dialog
                 Printer_Text.text = _current_Data.PrintText + _current_Data.Format.CloseTagger;
 
                 if (Text[i] != ' ') Play_ChatSE();
-                if (_currentDelay != 0) yield return new WaitForSeconds(_currentDelay);
+                if (_currentDelay != 0) yield return new WaitForSecondsRealtime(_currentDelay);
             }
 
             _current_Data.PrintText += _current_Data.Format.CloseTagger;
