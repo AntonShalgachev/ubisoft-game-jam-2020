@@ -19,10 +19,23 @@ public sealed class SingularityRenderer : PostProcessEffectRenderer<Singularity>
 {
     public override void Render(PostProcessRenderContext context)
     {
+
+        var flowManager = GameComponentsLocator.Get<UnityPrototype.GameFlowManager>();
+
+        float singularityProgress = settings.singularityProgress;
+        float scale = settings.scale;
+
+        if (Application.isPlaying)
+        {
+            singularityProgress = flowManager.singularityProgress;
+            scale = flowManager.scale;
+        }
+
+        var radius = Mathf.Lerp(settings.minPower, settings.maxPower, singularityProgress);
+
         var sheet = context.propertySheets.Get(Shader.Find("Hidden/Custom/Singularity"));
-        var radius = Mathf.Lerp(settings.minPower, settings.maxPower, settings.singularityProgress);
         sheet.properties.SetFloat("_Radius", radius);
-        sheet.properties.SetFloat("_SingularityScale", settings.scale);
+        sheet.properties.SetFloat("_SingularityScale", scale);
         sheet.properties.SetColor("_BackgroundColor", settings.background);
         context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
     }
