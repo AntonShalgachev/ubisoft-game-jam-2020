@@ -7,7 +7,6 @@ namespace UnityPrototype
     public class CelestialBody : MonoBehaviour
     {
         [SerializeField] private CelestialBodyContainer m_celestialBodyGroup = null;
-        [SerializeField] private float m_radius = 0.0f;
 
         public SimulatedObject simulatedObject => GetComponent<SimulatedObject>();
 
@@ -17,8 +16,7 @@ namespace UnityPrototype
         {
             var targetObjectPos = targetObject.position;
             var selfPos = simulatedObject.position;
-            var r = (targetObjectPos - selfPos).magnitude - m_radius;
-            var r2 = r * r;
+            var r2 = (targetObjectPos - selfPos).sqrMagnitude;
 
             var forceDirection = (selfPos - targetObjectPos).normalized;
             var forceMagnitude = m_simulationManager.gravitationalConstant * simulatedObject.mass * targetObject.mass / r2;
@@ -51,12 +49,6 @@ namespace UnityPrototype
             {
                 m_celestialBodyGroup.UnregisterBody(this);
             }
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.magenta;
-            GizmosHelper.DrawCircle(transform.position, m_radius);
         }
     }
 }

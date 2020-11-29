@@ -295,20 +295,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mars
       objectReference: {fileID: 0}
-    - target: {fileID: 1359133495053955858, guid: 9b46829f5d909dd47b127828abd6c543,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 9b46829f5d909dd47b127828abd6c543,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.24
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 9b46829f5d909dd47b127828abd6c543,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.21
+      value: 14.33
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 9b46829f5d909dd47b127828abd6c543,
         type: 3}
@@ -354,11 +349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7032510090761719604, guid: 9b46829f5d909dd47b127828abd6c543,
-        type: 3}
-      propertyPath: m_radius
-      value: 1.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b46829f5d909dd47b127828abd6c543, type: 3}
@@ -746,12 +736,12 @@ MonoBehaviour:
   m_targetPath: {fileID: 11400000, guid: a3b79e6e9883f5a4d9c2df3a140156bd, type: 2}
   m_planets: {fileID: 11400000, guid: 48231dcbda08fe04f98b4b231d38e15b, type: 2}
   m_player: {fileID: 131859}
-  m_maxTime: 30
+  m_maxTime: 70
   m_gravitationalConstant: 0.1
   m_simulateInRuntime: 0
   m_ghostPlayer: {fileID: 1932620195}
   m_simulationRegion: {fileID: 1011669018}
-  m_timeScale: 0.5
+  m_timeScale: 1
 --- !u!114 &819575632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,11 +1156,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172549775}
     m_Modifications:
-    - target: {fileID: 4094011681938070648, guid: d536fa71dd00cf349a228e41212ace48,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 9.999878
-      objectReference: {fileID: 0}
     - target: {fileID: 4094011683184476936, guid: d536fa71dd00cf349a228e41212ace48,
         type: 3}
       propertyPath: m_Name
@@ -1988,12 +1973,12 @@ PrefabInstance:
     - target: {fileID: 1359133495053955859, guid: 5987bb05a48ca2b448faa009bec2ff59,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4
+      value: -5.92
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 5987bb05a48ca2b448faa009bec2ff59,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.01
+      value: -11.49
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 5987bb05a48ca2b448faa009bec2ff59,
         type: 3}
@@ -2039,11 +2024,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7032510090761719604, guid: 5987bb05a48ca2b448faa009bec2ff59,
-        type: 3}
-      propertyPath: m_radius
-      value: 1.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5987bb05a48ca2b448faa009bec2ff59, type: 3}
@@ -2189,12 +2169,12 @@ PrefabInstance:
     - target: {fileID: 1359133495053955859, guid: 66030138d7a64404a824f9d3382753f8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 66030138d7a64404a824f9d3382753f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.4
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: 66030138d7a64404a824f9d3382753f8,
         type: 3}
@@ -2240,11 +2220,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7032510090761719604, guid: 66030138d7a64404a824f9d3382753f8,
-        type: 3}
-      propertyPath: m_radius
-      value: 4.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66030138d7a64404a824f9d3382753f8, type: 3}
@@ -7700,20 +7675,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
-    - target: {fileID: 1359133495053955858, guid: c13e784fd17231a439b8f559e1f21778,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: c13e784fd17231a439b8f559e1f21778,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.53
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: c13e784fd17231a439b8f559e1f21778,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.34
+      value: -12.23
       objectReference: {fileID: 0}
     - target: {fileID: 1359133495053955859, guid: c13e784fd17231a439b8f559e1f21778,
         type: 3}
@@ -7774,11 +7744,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 7032510090761719604, guid: c13e784fd17231a439b8f559e1f21778,
-        type: 3}
-      propertyPath: m_radius
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13e784fd17231a439b8f559e1f21778, type: 3}
@@ -8030,16 +7995,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7629586198579191481, guid: e0656554be83816479cab6a177f0feea,
-        type: 3}
-      propertyPath: m_initialSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014595901916497971, guid: e0656554be83816479cab6a177f0feea,
-        type: 3}
-      propertyPath: m_thrusterMaxForce
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0656554be83816479cab6a177f0feea, type: 3}

@@ -54,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6121051183718474978}
+  - component: {fileID: 6121051183718475004}
   - component: {fileID: 2861674184964266181}
   - component: {fileID: 4252373224215219044}
   - component: {fileID: 8130706963215224004}
@@ -79,6 +80,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6121051183718475004
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121051183718474979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &2861674184964266181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_celestialBodyGroup: {fileID: 11400000, guid: 48231dcbda08fe04f98b4b231d38e15b,
     type: 2}
-  m_radius: 1
 --- !u!114 &4252373224215219044
 MonoBehaviour:
   m_ObjectHideFlags: 0
